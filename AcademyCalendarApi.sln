@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyCalendarApi", "AcademyCalendarApi\AcademyCalendarApi.csproj", "{354B778D-C47D-4847-A758-8D6E7F26FDD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyCalendarApi.Tests", "AcademyCalendarApi.Tests\AcademyCalendarApi.Tests.csproj", "{CCF0664B-9528-4A40-BD31-EE695163120A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{354B778D-C47D-4847-A758-8D6E7F26FDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354B778D-C47D-4847-A758-8D6E7F26FDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354B778D-C47D-4847-A758-8D6E7F26FDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354B778D-C47D-4847-A758-8D6E7F26FDD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF0664B-9528-4A40-BD31-EE695163120A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF0664B-9528-4A40-BD31-EE695163120A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF0664B-9528-4A40-BD31-EE695163120A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF0664B-9528-4A40-BD31-EE695163120A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {406B720D-3A31-4330-A8E5-0D729B843730}
+	EndGlobalSection
+EndGlobal
