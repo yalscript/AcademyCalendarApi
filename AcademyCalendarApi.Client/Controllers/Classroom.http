@@ -1,0 +1,31 @@
+### Get all classrooms
+GET {{baseUrl}}/Classroom HTTP/1.1
+
+
+### Get classroom by id
+GET {{baseUrl}}/Classroom/1 HTTP/1.1
+
+
+### Add classroom 
+POST {{baseUrl}}/Classroom
+content-type: application/json
+
+{
+    "name": "Aula 3",
+    "seats": "20"
+}
+
+
+### Update classroom 
+PUT {{baseUrl}}/Classroom
+content-type: application/json
+
+{
+    "id": 4, 
+    "name": "Aula 3",
+    "seats": "25"
+}
+
+
+### Delete classroom 
+DELETE {{baseUrl}}/Classroom/4
