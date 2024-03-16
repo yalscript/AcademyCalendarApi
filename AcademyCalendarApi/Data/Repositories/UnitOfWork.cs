@@ -7,11 +7,13 @@ namespace AcademyCalendarApi.Data.Repositories
         private readonly DataContext _context;
 
         public IClassroomRepository ClassroomRepository { get; }
+        public ITeacherRepository TeacherRepository { get; }
 
-        public UnitOfWork(DataContext context, IClassroomRepository classroomRepository)
+        public UnitOfWork(DataContext context, IClassroomRepository classroomRepository, ITeacherRepository teacherRepository)
         {
             _context = context;
             ClassroomRepository = classroomRepository;
+            TeacherRepository = teacherRepository;
         }
 
         public async Task<bool> SaveAllAsync()

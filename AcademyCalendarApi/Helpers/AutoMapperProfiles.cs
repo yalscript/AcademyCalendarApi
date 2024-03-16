@@ -12,6 +12,11 @@ namespace API.Helpers
             CreateMap<Classroom, BasicClassroomDto>();
             CreateMap<AddClassroomDto, Classroom>();
             CreateMap<UpdateClassroomDto, Classroom>();
+            
+            CreateMap<Teacher, TeacherDto>();
+            CreateMap<Teacher, BasicTeacherDto>();
+            CreateMap<AddTeacherDto, Teacher>();
+            CreateMap<UpdateTeacherDto, Teacher>();
         }
     }
 }

@@ -1,0 +1,29 @@
+### Get all teachers
+GET {{baseUrl}}/Teacher HTTP/1.1
+
+
+### Get teacher by id
+GET {{baseUrl}}/Teacher/2 HTTP/1.1
+
+
+### Add teacher 
+POST {{baseUrl}}/Teacher
+content-type: application/json
+
+{
+    "name": "Alcia"
+}
+
+
+### Update teacher 
+PUT {{baseUrl}}/Teacher
+content-type: application/json
+
+{
+    "id": 2, 
+    "name": "Alicia"
+}
+
+
+### Delete teacher
+DELETE {{baseUrl}}/Teacher/2
