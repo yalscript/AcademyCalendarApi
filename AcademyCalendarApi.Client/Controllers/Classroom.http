@@ -22,7 +22,7 @@ content-type: application/json
 
 {
     "id": 4, 
-    "name": "Aula 3",
+    "name": "Aula 4",
     "seats": "25"
 }
 
