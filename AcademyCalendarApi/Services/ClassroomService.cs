@@ -46,7 +46,7 @@ namespace AcademyCalendarApi.Services
             var classroom = await _unitOfWork.ClassroomRepository.GetByIdAsync(classroomDto.Id);
             
             classroom.Name = classroomDto.Name;
-            classroom.Seats = classroomDto.Seats;
+            classroom.SeatsNumber = classroomDto.SeatsNumber;
 
             _unitOfWork.ClassroomRepository.Update(classroom);
             

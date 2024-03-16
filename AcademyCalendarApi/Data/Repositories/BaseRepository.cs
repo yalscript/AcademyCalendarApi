@@ -1,9 +1,10 @@
+using AcademyCalendarApi.Entities;
 using AcademyCalendarApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcademyCalendarApi.Data.Repositories
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, IEntity
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         private readonly DataContext _context;
 

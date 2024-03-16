@@ -1,10 +1,9 @@
-using AcademyCalendarApi.Interfaces;
-
 namespace AcademyCalendarApi.Entities
 {
-    public class Teacher : IEntity
+    public class Teacher : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
+        public ICollection<Subject> Subjects { get; } = new List<Subject>();
+        public ICollection<Class> Classes { get; } = new List<Class>();
     }
 }

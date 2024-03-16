@@ -11,5 +11,6 @@ namespace AcademyCalendarApi.Data
 
         public DbSet<Classroom> Classrooms { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
     }
 }

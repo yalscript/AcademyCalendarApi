@@ -4,6 +4,7 @@ namespace AcademyCalendarApi.Interfaces
     {
         IClassroomRepository ClassroomRepository { get; }
         ITeacherRepository TeacherRepository { get; }
+        ISubjectRepository SubjectRepository { get; }
 
         Task<bool> SaveAllAsync();
     }

@@ -1,6 +1,8 @@
+using AcademyCalendarApi.Entities;
+
 namespace AcademyCalendarApi.Interfaces
 {
-    public interface IBaseRepository<TEntity> where TEntity : class, IEntity
+    public interface IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int id);
