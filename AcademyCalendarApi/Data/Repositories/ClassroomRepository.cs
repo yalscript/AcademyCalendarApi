@@ -39,10 +39,5 @@ namespace AcademyCalendarApi.Data.Repositories
 
             _context.Classrooms.Remove(classroom);
         }
-
-        public async Task<bool> SaveAllAsync()
-        {
-            return await _context.SaveChangesAsync() > 0;
-        }
     }
 }

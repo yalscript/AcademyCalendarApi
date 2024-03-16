@@ -8,6 +8,7 @@ namespace AcademyCalendarApi.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {           
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IClassroomService, ClassroomService>();
             services.AddScoped<IClassroomRepository, ClassroomRepository>();
 

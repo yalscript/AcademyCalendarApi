@@ -9,6 +9,5 @@ namespace AcademyCalendarApi.Interfaces
         Task AddAsync(Classroom classroom);
         void Update(Classroom classroom);
         Task DeleteByIdAsync(int id);
-        Task<bool> SaveAllAsync();
     }
 }
