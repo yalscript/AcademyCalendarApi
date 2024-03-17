@@ -2,6 +2,9 @@
     "rest-client.environmentVariables": {
         "dev": {
             "baseUrl": "http://localhost:5117/api"
-        }
+        },
+        "pre": {
+            "baseUrl": "http://localhost:8080/api"
+        },
     }
 }

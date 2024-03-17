@@ -3,7 +3,7 @@ GET {{baseUrl}}/Teacher HTTP/1.1
 
 
 ### Get teacher by id
-GET {{baseUrl}}/Teacher/2 HTTP/1.1
+GET {{baseUrl}}/Teacher/1 HTTP/1.1
 
 
 ### Add teacher 
