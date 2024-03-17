@@ -480,3 +480,6 @@ $RECYCLE.BIN/
 *.db
 *.db-shm
 *.db-wal
+
+# Production config files
+*/appsettings.json

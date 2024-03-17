@@ -44,3 +44,7 @@ This section shows some useful información for the developers.
     -it allows us to see the logs while running, not necessary <br />
     --rm removes the docker instance when docker stops running <br />
     \<docker-project-image> is represented like: \<docker-username>/\<docker-repository-name>:\<version>, where version could be "latest" <br />
+- Push the docker image to Docker Hub:
+    ```
+    docker push <docker-project-image>
+    ```
