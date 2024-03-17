@@ -20,7 +20,7 @@ PUT {{baseUrl}}/Teacher
 content-type: application/json
 
 {
-    "id": 2, 
+    "id": 1, 
     "name": "Alicia"
 }
 
