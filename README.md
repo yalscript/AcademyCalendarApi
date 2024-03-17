@@ -35,12 +35,12 @@ This section shows some useful información for the developers.
     ```
     docker build -t <docker-username>/<docker-repository-name> . 
     ```
-    <docker-username> is the one used when signing up to docker
-    <docker-repository-name> could be the app name for example. Must be lowercase (for example, academy-calendar-api)
+    \<docker-username> is the one used when signing up to docker <br />
+    \<docker-repository-name> could be the app name for example. Must be lowercase (for example, academy-calendar-api) <br />
 - Run the docker image:
     ```
     docker run --rm -it -p 8080:80 <docker-project-image>
     ```
-    -it allows us to see the logs while running, not necessary
-    --rm removes the docker instance when docker stops running
-    <docker-project-image> is represented like: <docker-username>/<docker-repository-name>:<version>, where version could be "latest"
+    -it allows us to see the logs while running, not necessary <br />
+    --rm removes the docker instance when docker stops running <br />
+    \<docker-project-image> is represented like: \<docker-username>/\<docker-repository-name>:\<version>, where version could be "latest" <br />
