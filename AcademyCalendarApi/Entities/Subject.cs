@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AcademyCalendarApi.Entities
 {
     public class Subject : BaseEntity

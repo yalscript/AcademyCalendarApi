@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AcademyCalendarApi.Entities;
 using AcademyCalendarApi.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,12 +14,12 @@ namespace AcademyCalendarApi.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();
         }
 
-        public async Task<TEntity> GetByIdAsync(int id)
+        public virtual async Task<TEntity> GetByIdAsync(int id)
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }

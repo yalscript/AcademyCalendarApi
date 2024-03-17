@@ -19,6 +19,9 @@ namespace AcademyCalendarApi.Extensions
             services.AddScoped<ISubjectService, SubjectService>();
             services.AddScoped<ISubjectRepository, SubjectRepository>();
 
+            services.AddScoped<IClassService, ClassService>();
+            services.AddScoped<IClassRepository, ClassRepository>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             return services;

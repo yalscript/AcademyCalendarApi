@@ -1,0 +1,36 @@
+### Variables
+@subjectId = 1
+@subjectName = "Física"
+@teacherId = 2
+
+
+### Get all subjects
+GET {{baseUrl}}/Subject HTTP/1.1
+
+
+### Get subject by id
+GET {{baseUrl}}/Subject/{{subjectId}} HTTP/1.1
+
+
+### Add subject 
+POST {{baseUrl}}/Subject
+content-type: application/json
+
+{
+    "name": {{subjectName}},
+    "teacherId": {{teacherId}}
+}
+
+
+### Update subject 
+PUT {{baseUrl}}/Subject
+content-type: application/json
+
+{
+    "id": {{subjectId}}, 
+    "name": {{subjectName}}
+}
+
+
+### Delete subject
+DELETE {{baseUrl}}/Subject/{{subjectId}}

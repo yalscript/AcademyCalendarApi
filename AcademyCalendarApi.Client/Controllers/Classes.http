@@ -1,0 +1,49 @@
+### Variables
+@classId = 1
+@subjectId = 1
+@teacherId = 2
+@classroomId = 1
+@classType = 0
+@startedAt = "2024-03-17T10:00:00"
+@endedAt = "2024-03-17T11:30:00"
+
+
+### Get all classes
+GET {{baseUrl}}/Class HTTP/1.1
+
+
+### Get class by id
+GET {{baseUrl}}/Class/{{classId}} HTTP/1.1
+
+
+### Add class 
+POST {{baseUrl}}/Class
+content-type: application/json
+
+{
+    "type": {{classType}},
+    "startedAt": {{startedAt}},
+    "endedAt": {{endedAt}},
+    "teacherId": {{teacherId}},
+    "subjectId": {{subjectId}},
+    "classroomId": {{classroomId}}
+}
+
+
+### Update class 
+PUT {{baseUrl}}/Class
+content-type: application/json
+
+{
+    "id": {{classId}}, 
+    "type": {{classType}},
+    "startedAt": {{startedAt}},
+    "endedAt": {{endedAt}},
+    "teacherId": {{teacherId}},
+    "subjectId": {{subjectId}},
+    "classroomId": {{classroomId}}
+}
+
+
+### Delete class
+DELETE {{baseUrl}}/Class/{{subjectId}}

@@ -22,6 +22,11 @@ namespace API.Helpers
             CreateMap<Subject, BasicSubjectDto>();
             CreateMap<AddSubjectDto, Subject>();
             CreateMap<UpdateSubjectDto, Subject>();
+
+            CreateMap<Class, ClassDto>();
+            CreateMap<Class, BasicClassDto>();
+            CreateMap<AddClassDto, Class>();
+            CreateMap<UpdateClassDto, Class>();
         }
     }
 }
