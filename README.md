@@ -35,7 +35,7 @@ This section shows some useful información for the developers.
     ```
     docker build -t <docker-username>/<docker-repository-name> . 
     ```
-    \<docker-username> is the one used when signing up to docker <br />
+    \<docker-username> is the one used when signing up to docker <br /> 
     \<docker-repository-name> could be the app name for example. Must be lowercase (for example, academy-calendar-api) <br />
 - Run the docker image:
     ```
