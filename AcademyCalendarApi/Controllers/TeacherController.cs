@@ -14,28 +14,38 @@ namespace AcademyCalendarApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<BasicTeacherDto>> GetAll() {
-            return await _teacherService.GetAllAsync();
+        public async Task<ActionResult<IEnumerable<BasicTeacherDto>>> GetAll() {
+            var teachers = await _teacherService.GetAllAsync();
+            return Ok(teachers);
         }
 
         [HttpGet("{id}")]
-        public async Task<TeacherDto> GetById(int id) {
-            return await _teacherService.GetByIdAsync(id);
+        public async Task<ActionResult<TeacherDto>> GetById(int id) {
+            var teacher = await _teacherService.GetByIdAsync(id);
+
+            if (teacher == null) {
+                return NotFound();
+            }
+            
+            return Ok(teacher);
         }
 
         [HttpPost]
-        public async Task AddAsync(AddTeacherDto teacherDto) {
-            await _teacherService.AddAsync(teacherDto);
+        public async Task<ActionResult<BasicTeacherDto>> AddAsync(AddTeacherDto teacherDto) {
+            var teacher = await _teacherService.AddAsync(teacherDto);
+            return CreatedAtAction(nameof(GetById), teacher);
         }
 
         [HttpPut]
-        public async Task Update(UpdateTeacherDto teacherDto) {
+        public async Task<ActionResult> Update(UpdateTeacherDto teacherDto) {
             await _teacherService.Update(teacherDto);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task DeleteByIdAsync(int id) {
+        public async Task<ActionResult> DeleteByIdAsync(int id) {
             await _teacherService.DeleteByIdAsync(id);
+            return NoContent();
         }
     }
 }

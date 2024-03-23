@@ -24,9 +24,9 @@ namespace AcademyCalendarApi.Data.Repositories
             return await _context.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task AddAsync(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            await _context.AddAsync(entity);
+            return (await _context.AddAsync(entity)).Entity;
         }
 
         public void Update(TEntity entity)

@@ -6,7 +6,7 @@ namespace AcademyCalendarApi.Interfaces
     {
         Task<IEnumerable<BasicTeacherDto>> GetAllAsync();
         Task<TeacherDto> GetByIdAsync(int id);
-        Task AddAsync(AddTeacherDto teacherDto);
+        Task<BasicTeacherDto> AddAsync(AddTeacherDto teacherDto);
         Task Update(UpdateTeacherDto teacherDto);
         Task DeleteByIdAsync(int id);
     }

@@ -28,11 +28,15 @@ namespace AcademyCalendarApi.Services
             return _mapper.Map<TeacherDto>(teacher);
         }
 
-        public async Task AddAsync(AddTeacherDto teacherDto)
+        public async Task<BasicTeacherDto> AddAsync(AddTeacherDto teacherDto)
         {
-            var teacher = _mapper.Map<Teacher>(teacherDto);
-            await _unitOfWork.TeacherRepository.AddAsync(teacher);
+            var teacherToAdd = _mapper.Map<Teacher>(teacherDto);
+
+            var addedTeacher = await _unitOfWork.TeacherRepository.AddAsync(teacherToAdd);
+
             await _unitOfWork.SaveAllAsync();
+
+            return _mapper.Map<BasicTeacherDto>(addedTeacher);
         }
 
         public async Task DeleteByIdAsync(int id)

@@ -6,7 +6,7 @@ namespace AcademyCalendarApi.Interfaces
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(int id);
-        Task AddAsync(TEntity entity);
+        Task<TEntity> AddAsync(TEntity entity);
         void Update(TEntity entity);
         Task DeleteByIdAsync(int id);
     }
