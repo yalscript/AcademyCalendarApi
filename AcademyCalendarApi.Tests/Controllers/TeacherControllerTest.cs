@@ -59,13 +59,30 @@ namespace AcademyCalendarApi.Tests.Controllers
         }
 
         [Fact]
+        public async Task GetById_ReturnsNotFound_WhenTeacherNotFound()
+        {
+            // Arrange
+            var teacherId = 1;
+            TeacherDto nullTeacherDto = null!; 
+
+            _mockTeacherService.Setup(service => service.GetByIdAsync(teacherId)).ReturnsAsync(nullTeacherDto);
+
+            // Act
+            var result = await _teacherController.GetById(teacherId);
+
+            // Assert
+            var actionResult = Assert.IsType<ActionResult<TeacherDto>>(result);
+            Assert.IsType<NotFoundResult>(actionResult.Result);
+        }
+
+        [Fact]
         public async Task AddAsync_ReturnsCreatedResponse_WhenTeacherAddedSuccessfully()
         {
             // Arrange
             var newTeacherName = "New Teacher";
             var teacherDto = new AddTeacherDto { Name = newTeacherName };
             var addedTeacherDto = new BasicTeacherDto { Id = 1, Name = newTeacherName };
-            
+
             _mockTeacherService.Setup(service => service.AddAsync(teacherDto)).ReturnsAsync(addedTeacherDto);
 
             // Act
