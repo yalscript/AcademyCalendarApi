@@ -6,14 +6,14 @@ using Moq;
 
 namespace AcademyCalendarApi.Tests.Controllers
 {
-    public class TeacherControllerTest
+    public class TeacherControllerTests
     {
         private readonly TeacherController _teacherController;
         private readonly Mock<ITeacherService> _mockTeacherService;
 
-        public TeacherControllerTest() {
+        public TeacherControllerTests()
+        {
             _mockTeacherService = new Mock<ITeacherService>();
-
             _teacherController = new TeacherController(_mockTeacherService.Object);
         }
 
@@ -44,9 +44,19 @@ namespace AcademyCalendarApi.Tests.Controllers
         {
             // Arrange
             var teacherId = 1;
-            var teacherDto = new TeacherDto { Id = teacherId, Name = "Teacher 1" };
+            var teacherDto = new TeacherDto
+            {
+                Id = teacherId,
+                Name = "Teacher 1",
+                Subjects = new List<SubjectDto> {
+                    new SubjectDto() { Id = 1 , Name = "Subject 1" },
+                    new SubjectDto() { Id = 2 , Name = "Subject 2" }
+                }
+            };
 
-            _mockTeacherService.Setup(service => service.GetByIdAsync(teacherId)).ReturnsAsync(teacherDto);
+            _mockTeacherService
+                .Setup(service => service.GetByIdAsync(teacherId))
+                .ReturnsAsync(teacherDto);
 
             // Act
             var result = await _teacherController.GetById(teacherId);
@@ -63,9 +73,10 @@ namespace AcademyCalendarApi.Tests.Controllers
         {
             // Arrange
             var teacherId = 1;
-            TeacherDto nullTeacherDto = null!; 
 
-            _mockTeacherService.Setup(service => service.GetByIdAsync(teacherId)).ReturnsAsync(nullTeacherDto);
+            _mockTeacherService
+                .Setup(service => service.GetByIdAsync(teacherId))
+                .ReturnsAsync((TeacherDto)null!);
 
             // Act
             var result = await _teacherController.GetById(teacherId);
@@ -83,7 +94,9 @@ namespace AcademyCalendarApi.Tests.Controllers
             var teacherDto = new AddTeacherDto { Name = newTeacherName };
             var addedTeacherDto = new BasicTeacherDto { Id = 1, Name = newTeacherName };
 
-            _mockTeacherService.Setup(service => service.AddAsync(teacherDto)).ReturnsAsync(addedTeacherDto);
+            _mockTeacherService
+                .Setup(service => service.AddAsync(teacherDto))
+                .ReturnsAsync(addedTeacherDto);
 
             // Act
             var result = await _teacherController.AddAsync(teacherDto);
