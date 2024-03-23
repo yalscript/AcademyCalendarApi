@@ -25,14 +25,14 @@ namespace AcademyCalendarApi.Middlewares
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                _logger.LogError(ex, "{message}", ex.Message);
 
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
                 var response = _environment.IsDevelopment()
-                    ? new ApiException(context.Response.StatusCode, ex.Message, ex.StackTrace ?? string.Empty)
-                    : new ApiException(context.Response.StatusCode, ex.Message, "Internal Server Error");
+                    ? new ApiError(context.Response.StatusCode, ex.Message, ex.StackTrace ?? string.Empty)
+                    : new ApiError(context.Response.StatusCode, ex.Message, "Internal Server Error");
 
                 var options = new JsonSerializerOptions
                 {

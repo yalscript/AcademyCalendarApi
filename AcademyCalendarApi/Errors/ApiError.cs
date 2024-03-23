@@ -1,8 +1,8 @@
 namespace AcademyCalendarApi.Errors
 {
-    public class ApiException
+    public class ApiError
     {
-        public ApiException(int statusCode, string message, string details)
+        public ApiError(int statusCode, string message, string details)
         {
             StatusCode = statusCode;
             Message = message;
