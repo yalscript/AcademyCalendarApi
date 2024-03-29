@@ -4,6 +4,20 @@ This is the Academy Calendar API built with ASP.NET Core.
 ## Developer utilities
 This section shows some useful información for the developers.
 
+### CMD commands
+- Build the project:
+    ```
+    dotnet build
+    ```
+- Run the app:
+    ```
+    dotnet watch run --project ./AcademyCalendarApi --no-hot-reload
+    ```
+- Pass the tests:
+    ```
+    dotnet test
+    ```
+
 ### Entity Framework
 - Create first migration: 
     ```
