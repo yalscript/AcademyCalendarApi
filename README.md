@@ -2,7 +2,7 @@
 This is the Academy Calendar API built with ASP.NET Core.
 
 ## Developer utilities
-This section shows some useful información for the developers.
+This section shows some useful information for the developers.
 
 ### CMD commands
 - Build the project:
